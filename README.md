@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Izy Global Services LLC Website
+
+A professional website for Izy Global Services LLC, a Service Disabled Veteran Owned Small Business (SDVOSB) specializing in transportation & logistics management, freight services, supply chain solutions, and government contract support.
+
+## Technology Stack
+
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Testing:** Jest + React Testing Library
+- **Linting:** ESLint
+- **Formatting:** Prettier
+
+## Project Structure
+
+```
+src/
+├── app/          # Next.js App Router pages
+├── components/   # Reusable React components
+├── lib/          # Utility functions and shared logic
+├── types/        # TypeScript type definitions
+├── data/         # Static data and constants
+└── styles/       # Additional CSS files
+```
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run test` - Run Jest tests
+- `npm run test:watch` - Run tests in watch mode
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
 
-To learn more about Next.js, take a look at the following resources:
+## Development Guidelines
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Follow TypeScript best practices
+- Use Tailwind CSS for styling
+- Write tests for components and utilities
+- Maintain accessibility standards (WCAG 2.1 AA)
+- Ensure mobile-responsive design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Company Information
 
-## Deploy on Vercel
+- **Company:** Izy Global Services LLC
+- **Type:** Service Disabled Veteran Owned Small Business (SDVOSB)
+- **Location:** Fort Worth, Texas
+- **CAGE Code:** 949Y3
+- **UEI:** WLDNTVNK9SC7
+- **EIN:** 85-4379275
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Phone:** 713-992-0481
+- **Email:** freights@izymovers.com
+- **Address:** 4869 Madyson Ridge Dr, Fort Worth, TX 76133

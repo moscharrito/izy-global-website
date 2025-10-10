@@ -95,7 +95,6 @@ export default function CapabilitiesPage() {
                             <div className="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
                             <span className="text-neutral-700">{service.title}</span>
                           </div>
-                          
                         ) : null;
                       })}
                     </div>

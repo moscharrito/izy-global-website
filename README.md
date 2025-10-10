@@ -67,6 +67,6 @@ npm run dev
 
 ## Contact
 
-- **Phone:** 713-992-0481
-- **Email:** freights@izymovers.com
-- **Address:** 4869 Madyson Ridge Dr, Fort Worth, TX 76133
+- **Phone:** *********************
+- **Email:** *********************
+- **Address:** *******************

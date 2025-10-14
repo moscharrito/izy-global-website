@@ -45,14 +45,14 @@ const Header: React.FC = () => {
       )}
     >
       <Container>
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20 px-1 sm:px-0">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary-700 rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-3">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary-700 rounded-lg flex items-center justify-center flex-shrink-0">
               <span className="text-white font-bold text-lg lg:text-xl">IZY</span>
             </div>
-            <div className="hidden sm:block">
-              <div className="text-primary-700 font-heading font-bold text-lg lg:text-xl">
+            <div className="block">
+              <div className="text-primary-700 font-heading font-bold text-sm sm:text-lg lg:text-xl leading-tight">
                 Izy Global Services
               </div>
             </div>
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button & Mobile Menu Toggle */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4">
             <Link href="/contact" className="hidden md:inline-flex">
               <div className="flex items-center space-x-4">
                 <span className="hidden md:inline-block" />
@@ -111,7 +111,7 @@ const Header: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-2 text-neutral-700 hover:text-primary-700 transition-colors duration-200"
+              className="lg:hidden p-2 text-neutral-700 hover:text-primary-700 transition-colors duration-200 flex-shrink-0"
               aria-label="Toggle mobile menu"
             >
               <svg

@@ -8,7 +8,7 @@ import { Button, Container } from '@/components/ui';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background with Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-700 to-secondary-700">
         {/* Animated Background Elements - Reduced size and opacity */}
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <Container className="relative z-10 text-center text-white py-8">
+      <Container className="relative z-10 text-center text-white py-6">
         <div className="max-w-5xl mx-auto">
           {/* SDVOSB Badge */}
           <div className="inline-flex items-center px-6 py-3 bg-accent-500/25 backdrop-blur-sm rounded-full border border-accent-500/40 mb-6">
@@ -44,35 +44,35 @@ const Hero: React.FC = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black mb-4 leading-none">
-            <span className="block text-white drop-shadow-lg">DELIVERING EXCELLENCE</span>
+            <span className="block text-white drop-shadow-lg">STRATEGIC BUSINESS</span>
             <span className="block bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent drop-shadow-lg">
-              THROUGH SERVICE
+              CONSULTING & TRANSFORMATION
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-neutral-100 mb-6 leading-relaxed max-w-4xl mx-auto font-semibold">
-            Professional transportation, logistics, IT Services and government contract support services 
-            backed by military precision and unwavering commitment to excellence.
+          <p className="text-lg md:text-xl text-neutral-100 mb-5 leading-relaxed max-w-4xl mx-auto font-semibold">
+            Comprehensive business consulting services leveraging technology expertise, operational excellence, 
+            and government contracting experience to drive strategic transformation and measurable results.
           </p>
 
           {/* Mission Statement */}
-          <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 mb-8 border border-white/25 max-w-3xl mx-auto">
+          <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 mb-6 border border-white/25 max-w-3xl mx-auto">
             <p className="text-base md:text-lg text-white font-medium italic">
-              &ldquo;Empowering success through reliable consultancy, innovative solutions and dedicated service, 
-              one mission at a time.&rdquo;
+              &ldquo;Transforming organizations through strategic consulting, innovative solutions, and proven methodologies 
+              that deliver sustainable business outcomes and competitive advantages.&rdquo;
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link href="/capabilities">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <Link href="/services">
               <Button 
                 size="lg" 
                 variant="accent" 
                 className="text-primary-900 font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 px-8 py-4"
               >
-                VIEW OUR CAPABILITIES
+                EXPLORE CONSULTING SERVICES
               </Button>
             </Link>
             <Link href="/contact">
@@ -81,13 +81,13 @@ const Hero: React.FC = () => {
                 variant="outline" 
                 className="border-2 border-white text-white hover:bg-white hover:text-primary-900 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 px-8 py-4 font-bold"
               >
-                CONTACT US TODAY
+                START YOUR TRANSFORMATION
               </Button>
             </Link>
           </div>
 
           {/* Trust Indicators - Improved spacing and visibility */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 max-w-4xl mx-auto">
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
               <div className="w-12 h-12 bg-accent-500/30 rounded-full flex items-center justify-center mx-auto mb-2 border border-accent-400/50">
                 <svg className="w-6 h-6 text-accent-300" fill="currentColor" viewBox="0 0 20 20">
@@ -126,6 +126,16 @@ const Hero: React.FC = () => {
               </div>
               <div className="text-sm font-bold text-accent-200">BONDED</div>
               <div className="text-xs text-neutral-300 font-medium">& Insured</div>
+            </div>
+            
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+              <div className="w-12 h-12 bg-accent-500/30 rounded-full flex items-center justify-center mx-auto mb-2 border border-accent-400/50">
+                <svg className="w-6 h-6 text-accent-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="text-sm font-bold text-accent-200">STRATEGIC</div>
+              <div className="text-xs text-neutral-300 font-medium">Consulting</div>
             </div>
           </div>
         </div>

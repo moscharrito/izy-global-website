@@ -7,18 +7,18 @@ import type { CompanyInfo, CompanyValues, Certification } from '@/types';
 
 export const COMPANY_INFO: CompanyInfo = {
   name: 'Izy Global Services LLC',
-  tagline: 'Delivering Excellence Through Service',
-  description: 'A Service Disabled Veteran Owned Small Business (SDVOSB) headquartered in Fort Worth, Texas. Founded on the principles of service, integrity, and excellence, we bring military precision and dedication to every project we undertake.',
+  tagline: 'Strategic Business Consulting & Transformation',
+  description: 'A Service Disabled Veteran Owned Small Business (SDVOSB) headquartered in Houston, Texas. We are a strategic business consulting firm that leverages technology expertise, operational excellence, and government contracting experience to drive organizational transformation and deliver measurable business outcomes.',
   address: {
-    street: '4869 Madyson Ridge Dr',
-    city: 'Fort Worth',
+    street: '12411 King Olaf Dr',
+    city: 'Houston',
     state: 'TX',
-    zipCode: '76133',
+    zipCode: '77044',
   },
   contact: {
     phone: '713-992-0481',
-    email: 'freights@izymovers.com',
-    businessDevelopment: 'freights@izymovers.com', // Update with specific BD email if different
+    email: 'contracts@izyglobalservices.com',
+    businessDevelopment: 'contracts@izyglobalservices.com', // Update with specific BD email if different
   },
   identifiers: {
     ein: '85-4379275',
@@ -33,20 +33,20 @@ export const COMPANY_INFO: CompanyInfo = {
 
 export const COMPANY_VALUES: CompanyValues[] = [
   {
-    title: 'Service',
-    description: 'Commitment to serving our clients and community with dedication and excellence.',
+    title: 'Strategic Partnership',
+    description: 'Building long-term relationships focused on sustainable business transformation and growth.',
   },
   {
     title: 'Integrity',
-    description: 'Transparent and ethical business practices in all our operations.',
+    description: 'Transparent and ethical consulting practices that build trust and deliver honest assessments.',
   },
   {
     title: 'Excellence',
-    description: 'Continuous improvement and quality delivery in every project.',
+    description: 'Continuous improvement and innovative solutions that drive measurable business outcomes.',
   },
   {
-    title: 'Teamwork',
-    description: 'Collaborative approach to problem-solving and mission success.',
+    title: 'Results-Driven',
+    description: 'Methodical approach to consulting that delivers tangible value and competitive advantages.',
   },
 ];
 
@@ -65,14 +65,14 @@ export const CERTIFICATIONS: Certification[] = [
   },
 ];
 
-export const MISSION_STATEMENT = 'To deliver exceptional logistics and freight services while upholding the highest standards of integrity, reliability, and customer satisfaction.';
+export const MISSION_STATEMENT = 'To transform organizations through strategic business consulting, innovative solutions, and proven methodologies that deliver sustainable competitive advantages and measurable business outcomes.';
 
 export const WHY_CHOOSE_US = [
+  'Strategic Business Consulting Expertise',
   'Proven SDVOSB Partner',
-  'Mission-First Approach',
-  'Experienced Leadership',
-  'Nationwide Coverage',
-  'Competitive Pricing',
+  'Technology & Operational Excellence',
+  'Measurable Business Outcomes',
+  'Military Precision & Methodology',
 ];
 
 export const OFFICE_HOURS = {

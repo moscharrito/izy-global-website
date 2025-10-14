@@ -11,46 +11,34 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
     href: '/',
   },
   {
-    label: 'About Us',
+    label: 'About',
     href: '/about',
   },
   {
-    label: 'Services',
+    label: 'Consulting Services',
     href: '/services',
     children: [
       {
-        label: 'Transportation & Logistics',
-        href: '/services/transportation-logistics',
+        label: 'Strategic Business Transformation',
+        href: '/services/strategic-transformation',
       },
       {
-        label: 'Freight Services',
-        href: '/services/freight',
+        label: 'Operational Excellence',
+        href: '/services/operational-excellence',
       },
       {
-        label: 'Government Contract Support',
-        href: '/services/government-contracts',
+        label: 'Technology Strategy',
+        href: '/services/technology-strategy',
       },
       {
-        label: 'Supply Chain Solutions',
-        href: '/services/supply-chain',
-      },
-      {
-        label: 'IT Services',
-        href: '/services/it-services',
+        label: 'Government Contracting',
+        href: '/services/government-contracting',
       },
     ],
   },
   {
     label: 'Capabilities',
     href: '/capabilities',
-  },
-  {
-    label: 'Contract Vehicles',
-    href: '/contract-vehicles',
-  },
-  {
-    label: 'Careers',
-    href: '/careers',
   },
   {
     label: 'Contact',
@@ -60,42 +48,35 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
 
 export const FOOTER_NAVIGATION = {
   company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Leadership', href: '/about#leadership' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'About', href: '/about' },
+    { label: 'Capabilities', href: '/capabilities' },
     { label: 'Contact', href: '/contact' },
   ],
   services: [
-    { label: 'Transportation & Logistics', href: '/services/transportation-logistics' },
-    { label: 'Freight Services', href: '/services/freight' },
-    { label: 'Government Contracts', href: '/services/government-contracts' },
-    { label: 'Supply Chain Solutions', href: '/services/supply-chain' },
-    { label: 'IT Services', href: '/services/it-services' },
+    { label: 'Strategic Transformation', href: '/services/strategic-transformation' },
+    { label: 'Operational Excellence', href: '/services/operational-excellence' },
+    { label: 'Technology Strategy', href: '/services/technology-strategy' },
+    { label: 'Government Contracting', href: '/services/government-contracting' },
   ],
   resources: [
     { label: 'Capability Statement', href: '/resources/capability-statement.pdf' },
-    { label: 'Contract Vehicles', href: '/contract-vehicles' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms & Conditions', href: '/terms' },
   ],
   certifications: [
-    { label: 'SDVOSB Certification', href: 'https://search.certifications.sba.gov/profile/WLDNTVNK9SC7/949Y3?page=1' },
-    { label: 'SAM.gov Registration', href: 'https://sam.gov', external: true },
-    { label: 'Verify Our Status', href: 'https://search.certifications.sba.gov/profile/WLDNTVNK9SC7/949Y3?page=1' },
+    { label: 'SDVOSB Certified', href: 'https://search.certifications.sba.gov/profile/WLDNTVNK9SC7/949Y3?page=1' },
+    { label: 'SAM.gov Registered', href: 'https://sam.gov', external: true },
   ],
 };
 
 export const BREADCRUMB_LABELS: Record<string, string> = {
   '/': 'Home',
-  '/about': 'About Us',
-  '/services': 'Services',
-  '/services/transportation-logistics': 'Transportation & Logistics',
-  '/services/freight': 'Freight Services',
-  '/services/government-contracts': 'Government Contracts',
-  '/services/supply-chain': 'Supply Chain Solutions',
-  '/services/it-services': 'IT Services',
+  '/about': 'About',
+  '/services': 'Consulting Services',
+  '/services/strategic-transformation': 'Strategic Transformation',
+  '/services/operational-excellence': 'Operational Excellence',
+  '/services/technology-strategy': 'Technology Strategy',
+  '/services/government-contracting': 'Government Contracting',
   '/capabilities': 'Capabilities',
-  '/contract-vehicles': 'Contract Vehicles',
-  '/careers': 'Careers',
   '/contact': 'Contact',
 };

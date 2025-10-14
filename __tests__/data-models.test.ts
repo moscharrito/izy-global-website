@@ -23,37 +23,57 @@ describe('Data Models', () => {
     it('should have valid company information structure', () => {
       expect(COMPANY_INFO).toBeDefined();
       expect(COMPANY_INFO.name).toBe('Izy Global Services LLC');
-      expect(COMPANY_INFO.tagline).toBe('Delivering Excellence Through Service');
+      expect(COMPANY_INFO.tagline).toBe('Strategic Business Consulting & Transformation');
       expect(COMPANY_INFO.identifiers.ein).toBe('85-4379275');
       expect(COMPANY_INFO.identifiers.uei).toBe('WLDNTVNK9SC7');
       expect(COMPANY_INFO.identifiers.cageCode).toBe('949Y3');
     });
 
+    it('should emphasize business consulting in company description', () => {
+      expect(COMPANY_INFO.description).toContain('strategic business consulting');
+      expect(COMPANY_INFO.description).toContain('organizational transformation');
+      expect(COMPANY_INFO.description).toContain('measurable business outcomes');
+    });
+
     it('should have valid contact information', () => {
       expect(COMPANY_INFO.contact.phone).toBe('713-992-0481');
-      expect(COMPANY_INFO.contact.email).toBe('freights@izymovers.com');
+      expect(COMPANY_INFO.contact.email).toBe('contracts@izyglobalservices.com');
       expect(isValidEmail(COMPANY_INFO.contact.email)).toBe(true);
       expect(isValidPhoneNumber(COMPANY_INFO.contact.phone)).toBe(true);
     });
 
     it('should have valid address information', () => {
       const { address } = COMPANY_INFO;
-      expect(address.street).toBe('4869 Madyson Ridge Dr');
-      expect(address.city).toBe('Fort Worth');
+      expect(address.street).toBe('12411 King Olaf Dr');
+      expect(address.city).toBe('Houston');
       expect(address.state).toBe('TX');
-      expect(address.zipCode).toBe('76133');
+      expect(address.zipCode).toBe('77044');
     });
   });
 
   describe('Services', () => {
-    it('should have four main services', () => {
+    it('should have four main consulting services', () => {
       expect(SERVICES).toHaveLength(4);
       expect(SERVICES.map(s => s.id)).toEqual([
-        'transportation-logistics',
-        'freight-services',
-        'government-contract-support',
-        'supply-chain-solutions',
+        'strategic-business-transformation',
+        'operational-excellence-consulting',
+        'government-contracting-excellence',
+        'technology-strategy-consulting',
       ]);
+    });
+
+    it('should position services as business consulting specializations', () => {
+      const strategicService = SERVICES.find(s => s.id === 'strategic-business-transformation');
+      expect(strategicService?.category).toBe('strategic');
+      expect(strategicService?.title).toContain('Strategic Business Transformation');
+      
+      const operationalService = SERVICES.find(s => s.id === 'operational-excellence-consulting');
+      expect(operationalService?.category).toBe('operational');
+      expect(operationalService?.description).toContain('consulting');
+      
+      const technologyService = SERVICES.find(s => s.id === 'technology-strategy-consulting');
+      expect(technologyService?.category).toBe('technology');
+      expect(technologyService?.title).toContain('Strategy');
     });
 
     it('should have valid service structure', () => {
@@ -67,14 +87,30 @@ describe('Data Models', () => {
       });
     });
 
-    it('should filter services by category', () => {
-      const transportationServices = getServicesByCategory(SERVICES, 'transportation');
-      expect(transportationServices).toHaveLength(1);
-      expect(transportationServices[0].id).toBe('transportation-logistics');
+    it('should filter services by consulting category', () => {
+      const strategicServices = getServicesByCategory(SERVICES, 'strategic');
+      expect(strategicServices).toHaveLength(1);
+      expect(strategicServices[0].id).toBe('strategic-business-transformation');
 
-      const freightServices = getServicesByCategory(SERVICES, 'freight');
-      expect(freightServices).toHaveLength(1);
-      expect(freightServices[0].id).toBe('freight-services');
+      const operationalServices = getServicesByCategory(SERVICES, 'operational');
+      expect(operationalServices).toHaveLength(1);
+      expect(operationalServices[0].id).toBe('operational-excellence-consulting');
+
+      const technologyServices = getServicesByCategory(SERVICES, 'technology');
+      expect(technologyServices).toHaveLength(1);
+      expect(technologyServices[0].id).toBe('technology-strategy-consulting');
+
+      const governmentServices = getServicesByCategory(SERVICES, 'government');
+      expect(governmentServices).toHaveLength(1);
+      expect(governmentServices[0].id).toBe('government-contracting-excellence');
+    });
+
+    it('should emphasize business outcomes in service descriptions', () => {
+      SERVICES.forEach((service: Service) => {
+        expect(service.description.toLowerCase()).toMatch(
+          /consulting|strategic|transformation|business|outcomes|optimization|excellence/
+        );
+      });
     });
   });
 
@@ -95,20 +131,119 @@ describe('Data Models', () => {
   });
 
   describe('Navigation', () => {
-    it('should have main navigation items', () => {
+    it('should have main navigation items with consulting focus', () => {
       expect(MAIN_NAVIGATION).toBeDefined();
       expect(MAIN_NAVIGATION.length).toBeGreaterThan(0);
       
       const homeItem = MAIN_NAVIGATION.find(item => item.label === 'Home');
       expect(homeItem).toBeDefined();
       expect(homeItem?.href).toBe('/');
+      
+      const servicesItem = MAIN_NAVIGATION.find(item => item.label === 'Consulting Services');
+      expect(servicesItem).toBeDefined();
+      expect(servicesItem?.href).toBe('/services');
     });
 
-    it('should have services submenu', () => {
-      const servicesItem = MAIN_NAVIGATION.find(item => item.label === 'Services');
+    it('should have consulting services submenu', () => {
+      const servicesItem = MAIN_NAVIGATION.find(item => item.label === 'Consulting Services');
       expect(servicesItem).toBeDefined();
       expect(servicesItem?.children).toBeDefined();
-      expect(servicesItem?.children?.length).toBeGreaterThan(0);
+      expect(servicesItem?.children?.length).toBe(4);
+      
+      const serviceLabels = servicesItem?.children?.map(child => child.label) || [];
+      expect(serviceLabels).toContain('Strategic Business Transformation');
+      expect(serviceLabels).toContain('Operational Excellence');
+      expect(serviceLabels).toContain('Technology Strategy');
+      expect(serviceLabels).toContain('Government Contracting');
+    });
+
+    it('should have streamlined navigation structure', () => {
+      const navigationLabels = MAIN_NAVIGATION.map(item => item.label);
+      expect(navigationLabels).toEqual([
+        'Home',
+        'About',
+        'Consulting Services',
+        'Capabilities',
+        'Contact'
+      ]);
+    });
+  });
+});
+
+describe('Business Consulting Framework', () => {
+  describe('Messaging Consistency', () => {
+    it('should maintain consistent business consulting messaging', () => {
+      // Company tagline should emphasize consulting
+      expect(COMPANY_INFO.tagline.toLowerCase()).toContain('consulting');
+      
+      // Services should be positioned as consulting specializations
+      const consultingKeywords = ['consulting', 'strategic', 'transformation', 'excellence'];
+      SERVICES.forEach(service => {
+        const hasConsultingFocus = consultingKeywords.some(keyword => 
+          service.title.toLowerCase().includes(keyword) || 
+          service.description.toLowerCase().includes(keyword)
+        );
+        expect(hasConsultingFocus).toBe(true);
+      });
+    });
+
+    it('should position IT and logistics as consulting capabilities', () => {
+      const technologyService = SERVICES.find(s => s.id === 'technology-strategy-consulting');
+      expect(technologyService?.title).toContain('Strategy');
+      expect(technologyService?.description).toContain('consulting');
+      
+      const operationalService = SERVICES.find(s => s.id === 'operational-excellence-consulting');
+      expect(operationalService?.title).toContain('Excellence');
+      expect(operationalService?.description).toContain('consulting');
+    });
+
+    it('should emphasize business outcomes in service benefits', () => {
+      SERVICES.forEach(service => {
+        expect(service.benefits).toBeDefined();
+        expect(service.benefits.length).toBeGreaterThan(0);
+        
+        const businessOutcomeKeywords = [
+          'efficiency', 'cost', 'performance', 'competitive', 'strategic', 
+          'business', 'outcomes', 'optimization', 'improvement'
+        ];
+        
+        const hasBenefitsFocus = service.benefits.some(benefit =>
+          businessOutcomeKeywords.some(keyword => 
+            benefit.toLowerCase().includes(keyword)
+          )
+        );
+        expect(hasBenefitsFocus).toBe(true);
+      });
+    });
+  });
+
+  describe('Service Structure Validation', () => {
+    it('should have strategic business transformation as primary service', () => {
+      const primaryService = SERVICES[0];
+      expect(primaryService.id).toBe('strategic-business-transformation');
+      expect(primaryService.category).toBe('strategic');
+      expect(primaryService.features).toContain('Strategic Planning & Assessment');
+    });
+
+    it('should structure services in consulting hierarchy', () => {
+      const categories = SERVICES.map(s => s.category);
+      expect(categories).toEqual(['strategic', 'operational', 'government', 'technology']);
+    });
+
+    it('should include consulting methodology in service features', () => {
+      SERVICES.forEach(service => {
+        const methodologyKeywords = [
+          'strategy', 'assessment', 'planning', 'optimization', 'management', 
+          'consulting', 'implementation', 'transformation'
+        ];
+        
+        const hasMethodology = service.features.some(feature =>
+          methodologyKeywords.some(keyword => 
+            feature.toLowerCase().includes(keyword)
+          )
+        );
+        expect(hasMethodology).toBe(true);
+      });
     });
   });
 });
@@ -124,18 +259,18 @@ describe('Utility Functions', () => {
   describe('formatAddress', () => {
     it('should format address correctly', () => {
       const address = {
-        street: '4869 Madyson Ridge Dr',
-        city: 'Fort Worth',
+        street: '12411 King Olaf Dr',
+        city: 'Houston',
         state: 'TX',
-        zipCode: '76133',
+        zipCode: '77044',
       };
-      expect(formatAddress(address)).toBe('4869 Madyson Ridge Dr, Fort Worth, TX 76133');
+      expect(formatAddress(address)).toBe('12411 King Olaf Dr, Houston, TX 77044');
     });
   });
 
   describe('email validation', () => {
     it('should validate email addresses', () => {
-      expect(isValidEmail('freights@izymovers.com')).toBe(true);
+      expect(isValidEmail('contracts@izyglobalservices.com')).toBe(true);
       expect(isValidEmail('invalid-email')).toBe(false);
       expect(isValidEmail('test@example')).toBe(false);
     });

@@ -5,7 +5,7 @@
  * Contact information, form, and office details
  */
 import React, { useState } from 'react';
-import { Container, Button } from '@/components/ui';
+import { Container, Button, Map } from '@/components/ui';
 import { COMPANY_INFO, OFFICE_HOURS } from '@/data/company';
 
 export default function ContactPage() {
@@ -85,13 +85,13 @@ export default function ContactPage() {
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
               Let&rsquo;s Discuss Your
               <span className="block bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent">
-                Logistics Needs
+                Business Transformation
               </span>
             </h1>
             
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              Ready to experience the difference that military precision and SDVOSB expertise can make? 
-              Contact us today for a free consultation.
+              Ready to transform your organization with strategic consulting expertise and SDVOSB partnership? 
+              Contact us today for a free business consultation.
             </p>
           </div>
         </Container>
@@ -104,7 +104,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-3xl p-8 shadow-large border border-neutral-200">
-                <h2 className="text-3xl font-heading font-bold text-primary-900 mb-8">Send Us a Message</h2>
+                <h2 className="text-3xl font-heading font-bold text-primary-900 mb-8">Start Your Strategic Partnership</h2>
                 
                 {submitStatus === 'success' && (
                   <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -112,7 +112,7 @@ export default function ContactPage() {
                       <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <p className="text-green-800">Thank you! Your message has been sent successfully. We&rsquo;ll get back to you soon.</p>
+                      <p className="text-green-800">Thank you! Your consultation request has been received. We&rsquo;ll contact you within 24 hours to discuss your business transformation needs.</p>
                     </div>
                   </div>
                 )}
@@ -186,17 +186,23 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="form-label">Subject *</label>
-                    <input
-                      type="text"
+                    <label htmlFor="subject" className="form-label">Consulting Interest *</label>
+                    <select
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="form-input"
-                      placeholder="Brief description of your inquiry"
-                    />
+                      className="form-select"
+                    >
+                      <option value="">Select your consulting need...</option>
+                      <option value="Strategic Business Transformation">Strategic Business Transformation</option>
+                      <option value="Operational Excellence Consulting">Operational Excellence Consulting</option>
+                      <option value="Technology Strategy & Digital Transformation">Technology Strategy & Digital Transformation</option>
+                      <option value="Government Contracting Excellence">Government Contracting Excellence</option>
+                      <option value="General Business Consultation">General Business Consultation</option>
+                      <option value="SDVOSB Partnership Opportunity">SDVOSB Partnership Opportunity</option>
+                    </select>
                   </div>
 
                   <div>
@@ -229,7 +235,7 @@ export default function ContactPage() {
                       required
                       rows={6}
                       className="form-textarea"
-                      placeholder="Please provide details about your logistics needs, timeline, and any specific requirements..."
+                      placeholder="Please describe your business challenges, transformation goals, timeline, and how our consulting expertise can help drive your success..."
                     />
                   </div>
 
@@ -240,7 +246,7 @@ export default function ContactPage() {
                     loading={isSubmitting}
                     className="w-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
-                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                    {isSubmitting ? 'Requesting Consultation...' : 'Request Consultation'}
                   </Button>
                 </form>
               </div>
@@ -324,8 +330,8 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-accent-800">Quick Response</h3>
                 </div>
                 <p className="text-accent-700 text-sm">
-                  We typically respond to all inquiries within 24 hours during business days. 
-                  For urgent matters, please call us directly.
+                  We respond to all consultation requests within 24 hours during business days. 
+                  For urgent business transformation needs, please call us directly.
                 </p>
               </div>
             </div>
@@ -333,23 +339,68 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Interactive Map Section */}
       <section className="py-20 bg-white">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-heading font-bold text-primary-900 mb-6">Visit Our Office</h2>
-            <p className="text-xl text-neutral-700">Located in the heart of Fort Worth, Texas</p>
+            <h2 className="text-4xl font-heading font-bold text-primary-900 mb-6">Visit Our Houston Office</h2>
+            <p className="text-xl text-neutral-700 mb-4">
+              Strategically located in Houston, Texas - the energy capital of the world
+            </p>
+            <div className="inline-flex items-center px-4 py-2 bg-primary-50 rounded-full border border-primary-200">
+              <svg className="w-4 h-4 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-primary-700 font-medium text-sm">
+                {COMPANY_INFO.address.street}, {COMPANY_INFO.address.city}, {COMPANY_INFO.address.state} {COMPANY_INFO.address.zipCode}
+              </span>
+            </div>
           </div>
           
-          <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-3xl h-96 flex items-center justify-center border border-neutral-300">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
+          <div className="max-w-5xl mx-auto">
+            <Map 
+              address={`${COMPANY_INFO.address.street}, ${COMPANY_INFO.address.city}, ${COMPANY_INFO.address.state} ${COMPANY_INFO.address.zipCode}`}
+              height="500px"
+              className="shadow-2xl border border-neutral-200"
+            />
+            
+            {/* Office Details */}
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl border border-primary-200">
+                <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-primary-900 mb-2">Business Hours</h3>
+                <p className="text-primary-700 text-sm mb-1">{OFFICE_HOURS.weekdays}</p>
+                <p className="text-primary-700 text-sm">{OFFICE_HOURS.weekend}</p>
+                <p className="text-primary-600 text-xs mt-2">{OFFICE_HOURS.timezone}</p>
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-2">Interactive Map</h3>
-              <p className="text-neutral-600">Map integration coming soon</p>
+              
+              <div className="text-center p-6 bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl border border-accent-200">
+                <div className="w-12 h-12 bg-accent-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-accent-900 mb-2">Direct Contact</h3>
+                <p className="text-accent-700 text-sm mb-1">{COMPANY_INFO.contact.phone}</p>
+                <p className="text-accent-700 text-sm">{COMPANY_INFO.contact.email}</p>
+                <p className="text-accent-600 text-xs mt-2">24-hour response guarantee</p>
+              </div>
+              
+              <div className="text-center p-6 bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-2xl border border-secondary-200">
+                <div className="w-12 h-12 bg-secondary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">Strategic Location</h3>
+                <p className="text-secondary-700 text-sm mb-1">Houston Energy Corridor</p>
+                <p className="text-secondary-700 text-sm">Major Business Hub Access</p>
+                <p className="text-secondary-600 text-xs mt-2">Serving nationwide clients</p>
+              </div>
             </div>
           </div>
         </Container>

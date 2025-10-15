@@ -51,11 +51,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Successfully supported COVID-era transport needs',
       'Established reliable multi-state logistics network'
     ],
-    buyerRepresentative: {
-      name: 'Scott Dickey',
-      email: 'Scott.Dickey@va.gov',
-      phone: '(615) 225-6454'
-    },
+
     category: 'services'
   },
   {
@@ -72,11 +68,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Timely delivery to specified military installation',
       'Technical documentation and training materials'
     ],
-    buyerRepresentative: {
-      name: 'Hugh Jones',
-      email: 'hugh.m.jones4.civ@mail.mil',
-      phone: '210-623-0830'
-    },
+
     contractingOfficer: {
       name: 'MICC Ft Drum, S2P2',
       organization: '925th CBN & MICC Fort Drum, NY',
@@ -98,11 +90,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Installation guidance and technical support',
       'Warranty and maintenance documentation'
     ],
-    buyerRepresentative: {
-      name: 'Kyle Fratzel',
-      email: 'kyle.a.fratzel.civ@army.mil',
-      phone: '913-684-7741'
-    },
+
     category: 'equipment'
   },
   {
@@ -119,11 +107,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Delivery coordination with base operations',
       'Quality control and inspection services'
     ],
-    buyerRepresentative: {
-      name: 'George Webb',
-      email: 'george.e.webb52.mil@army.mil',
-      phone: '915-252-8112'
-    },
+
     category: 'equipment'
   },
   {
@@ -140,11 +124,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Installation and setup coordination',
       'Operator training materials and documentation'
     ],
-    buyerRepresentative: {
-      name: 'Bryan Peterson',
-      email: 'Bryan.j.peterson.civ@army.mil',
-      phone: '812-854-3292'
-    },
+
     category: 'equipment'
   },
   {
@@ -160,11 +140,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Safety compliance and certification',
       'Maintenance schedule and parts availability'
     ],
-    buyerRepresentative: {
-      name: 'Madison Parker',
-      email: 'madison.p.parker.civ@army.mil',
-      phone: '918-916-2238'
-    },
+
     category: 'equipment'
   },
   {
@@ -180,11 +156,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Installation coordination and technical support',
       'Fuel system integration and safety protocols'
     ],
-    buyerRepresentative: {
-      name: 'Travis Gill',
-      email: 'billy.t.gill.civ@army.mil',
-      phone: '913-684-7792'
-    },
+
     category: 'equipment'
   },
   {
@@ -200,11 +172,7 @@ export const PAST_PERFORMANCE: PastPerformance[] = [
       'Transportation and positioning services',
       'Environmental compliance documentation'
     ],
-    buyerRepresentative: {
-      name: 'Katherine Cornelius',
-      email: 'Kathy.McDaniel@txdot.gov',
-      phone: 'N/A'
-    },
+
     category: 'equipment'
   }
 ];
@@ -226,7 +194,6 @@ export const PERFORMANCE_SUMMARY = {
 export const CLIENT_TESTIMONIALS = [
   {
     client: 'Department of Veterans Affairs',
-    representative: 'Scott Dickey',
     quote: 'IZY Global Services has consistently delivered exceptional courier services with a 99% on-time delivery rate and zero compliance violations.',
     project: 'TVHS RMD Courier Services'
   }

@@ -42,12 +42,7 @@ const CompanyOverview: React.FC = () => {
                 <div className="text-sm text-neutral-700 font-bold">UEI NUMBER</div>
               </div>
               
-              <div className="bg-white rounded-xl p-4 shadow-soft border border-neutral-200">
-                <div className="text-2xl font-black text-primary-700 mb-1">
-                  {COMPANY_INFO.identifiers.ein}
-                </div>
-                <div className="text-sm text-neutral-700 font-bold">EIN</div>
-              </div>
+
             </div>
 
             {/* Contact Information */}

@@ -229,10 +229,7 @@ export default function AboutPage() {
                 <div className="text-3xl font-bold text-accent-400 mb-2">{COMPANY_INFO.identifiers.uei}</div>
                 <div className="text-neutral-200">UEI Number</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-accent-400 mb-2">{COMPANY_INFO.identifiers.ein}</div>
-                <div className="text-neutral-200">EIN</div>
-              </div>
+
             </div>
           </div>
         </Container>

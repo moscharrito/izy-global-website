@@ -4,10 +4,8 @@
  */
 
 export interface Address {
-  street: string;
   city: string;
   state: string;
-  zipCode: string;
 }
 
 export interface ContactInfo {
@@ -17,7 +15,6 @@ export interface ContactInfo {
 }
 
 export interface BusinessIdentifiers {
-  ein: string;
   uei: string;
   cageCode: string;
 }

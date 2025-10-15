@@ -10,18 +10,15 @@ export const COMPANY_INFO: CompanyInfo = {
   tagline: 'Strategic Business Consulting & Transformation',
   description: 'A Service Disabled Veteran Owned Small Business (SDVOSB) headquartered in Houston, Texas. We are a strategic business consulting firm that leverages technology expertise, operational excellence, and government contracting experience to drive organizational transformation and deliver measurable business outcomes.',
   address: {
-    street: '12411 King Olaf Dr',
     city: 'Houston',
-    state: 'TX',
-    zipCode: '77044',
+    state: 'Texas',
   },
   contact: {
-    phone: '713-992-0481',
+    phone: '346-483-6266',
     email: 'contracts@izyglobalservices.com',
     businessDevelopment: 'contracts@izyglobalservices.com', // Update with specific BD email if different
   },
   identifiers: {
-    ein: '85-4379275',
     uei: 'WLDNTVNK9SC7',
     cageCode: '949Y3',
   },

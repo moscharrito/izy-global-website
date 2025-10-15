@@ -3,7 +3,7 @@
  * Defines the structure for service offerings and capabilities
  */
 
-export type ServiceCategory = 'transportation' | 'freight' | 'government' | 'supply-chain' | 'technology';
+export type ServiceCategory = 'strategic' | 'operational' | 'government' | 'technology';
 
 export interface Service {
   id: string;

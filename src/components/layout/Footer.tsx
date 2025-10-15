@@ -5,6 +5,7 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { COMPANY_INFO } from '@/data/company';
 import { Container } from '@/components/ui';
 
@@ -37,8 +38,7 @@ export function Footer() {
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-neutral-300">
-                    <div>{COMPANY_INFO.address.street}</div>
-                    <div>{COMPANY_INFO.address.city}, {COMPANY_INFO.address.state} {COMPANY_INFO.address.zipCode}</div>
+                    <div>{COMPANY_INFO.address.city}, {COMPANY_INFO.address.state}</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -150,9 +150,11 @@ export function Footer() {
               
               {/* SDVOSB Badge */}
                 <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl p-4 text-center shadow-lg border-2 border-accent-400">
-                  <img 
+                  <Image 
                     src="/SDVOSB-logo.png" 
                     alt="SDVOSB Certified - Service Disabled Veteran Owned Small Business"
+                    width={120}
+                    height={80}
                     className="w-full h-auto max-w-[120px] mx-auto"
                   />
                 </div>
@@ -167,10 +169,7 @@ export function Footer() {
                   <div className="text-accent-400 font-bold text-xs mb-1">UEI</div>
                   <div className="text-white font-black text-sm">{COMPANY_INFO.identifiers.uei}</div>
                 </div>
-                <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm border border-white/20">
-                  <div className="text-accent-400 font-bold text-xs mb-1">EIN</div>
-                  <div className="text-white font-black text-lg">{COMPANY_INFO.identifiers.ein}</div>
-                </div>
+
               </div>
 
               {/* SAM Registration Status */}

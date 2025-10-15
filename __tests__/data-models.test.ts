@@ -36,7 +36,7 @@ describe('Data Models', () => {
     });
 
     it('should have valid contact information', () => {
-      expect(COMPANY_INFO.contact.phone).toBe('713-992-0481');
+      expect(COMPANY_INFO.contact.phone).toBe('346-483-6266');
       expect(COMPANY_INFO.contact.email).toBe('contracts@izyglobalservices.com');
       expect(isValidEmail(COMPANY_INFO.contact.email)).toBe(true);
       expect(isValidPhoneNumber(COMPANY_INFO.contact.phone)).toBe(true);
@@ -251,8 +251,8 @@ describe('Business Consulting Framework', () => {
 describe('Utility Functions', () => {
   describe('formatPhoneNumber', () => {
     it('should format phone number correctly', () => {
-      expect(formatPhoneNumber('7139920481')).toBe('(713) 992-0481');
-      expect(formatPhoneNumber('713-992-0481')).toBe('(713) 992-0481');
+      expect(formatPhoneNumber('3464836266')).toBe('(346) 483-6266');
+      expect(formatPhoneNumber('346-483-6266')).toBe('(346) 483-6266');
     });
   });
 
@@ -278,9 +278,9 @@ describe('Utility Functions', () => {
 
   describe('phone validation', () => {
     it('should validate phone numbers', () => {
-      expect(isValidPhoneNumber('713-992-0481')).toBe(true);
-      expect(isValidPhoneNumber('(713) 992-0481')).toBe(true);
-      expect(isValidPhoneNumber('7139920481')).toBe(true);
+      expect(isValidPhoneNumber('346-483-6266')).toBe(true);
+      expect(isValidPhoneNumber('(346) 483-6266')).toBe(true);
+      expect(isValidPhoneNumber('3464836266')).toBe(true);
       expect(isValidPhoneNumber('invalid')).toBe(false);
     });
   });

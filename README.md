@@ -60,10 +60,8 @@ npm run dev
 
 - **Company:** Izy Global Services LLC
 - **Type:** Service Disabled Veteran Owned Small Business (SDVOSB)
-- **Location:** Fort Worth, Texas
+- **Location:** Houston, Texas
 - **CAGE Code:** 949Y3
-- **UEI:** WLDNTVNK9SC7
-- **EIN:** 85-4379275
 
 ## Contact
 

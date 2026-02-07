@@ -1,0 +1,27 @@
+{
+  "app": {
+    "[project]/izy-global-website/src/app/about/page": [
+      "static/media/cf514f5d0007dafa-s.p.417aa1a2.woff2",
+      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
+    ],
+    "[project]/izy-global-website/src/app/capabilities/page": [
+      "static/media/cf514f5d0007dafa-s.p.417aa1a2.woff2",
+      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
+    ],
+    "[project]/izy-global-website/src/app/contact/page": [
+      "static/media/cf514f5d0007dafa-s.p.417aa1a2.woff2",
+      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
+    ],
+    "[project]/izy-global-website/src/app/page": [
+      "static/media/cf514f5d0007dafa-s.p.417aa1a2.woff2",
+      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
+    ],
+    "[project]/izy-global-website/src/app/services/page": [
+      "static/media/cf514f5d0007dafa-s.p.417aa1a2.woff2",
+      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

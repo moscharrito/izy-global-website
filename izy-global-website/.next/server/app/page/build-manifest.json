@@ -1,0 +1,21 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/2ca5b_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_411c4ce2._.js",
+    "static/chunks/2ca5b_next_dist_compiled_react-dom_d383e22a._.js",
+    "static/chunks/2ca5b_next_dist_compiled_next-devtools_index_6664b701.js",
+    "static/chunks/2ca5b_next_dist_compiled_f95712ff._.js",
+    "static/chunks/2ca5b_next_dist_client_64612cf6._.js",
+    "static/chunks/2ca5b_next_dist_b417b978._.js",
+    "static/chunks/2ca5b_@swc_helpers_cjs_18f72326._.js",
+    "static/chunks/izy-global-website_a0ff3932._.js",
+    "static/chunks/turbopack-izy-global-website_06a76e7c._.js"
+  ],
+  "pages": {},
+  "ampFirstPages": []
+}

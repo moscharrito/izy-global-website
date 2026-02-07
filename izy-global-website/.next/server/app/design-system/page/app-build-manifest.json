@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "/design-system/page": [
+      "static/chunks/81b4f64357901b84.css",
+      "static/chunks/0b71bd058b58f15f.js",
+      "static/chunks/8650cbce6414a88f.js",
+      "static/chunks/8dcb250802500f74.js",
+      "static/chunks/b201266e5f876254.js",
+      "static/chunks/4c87df9d5b2ab8b0.js",
+      "static/chunks/2c5b970c81d5e729.js",
+      "static/chunks/turbopack-e79fdbac36048718.js"
+    ]
+  }
+}

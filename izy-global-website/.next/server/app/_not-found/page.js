@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__dee0a702._.js")
+R.c("server/chunks/ssr/2ca5b_next_dist_c8a3c75e._.js")
+R.c("server/chunks/ssr/2ca5b_next_dist_a92c8c96._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__13ad90a9._.js")
+R.c("server/chunks/ssr/2ca5b_next_dist_client_components_c3d05f58._.js")
+R.c("server/chunks/ssr/2ca5b_next_dist_client_components_builtin_forbidden_63ec119a.js")
+R.c("server/chunks/ssr/[root-of-the-server]__a70c5bfc._.js")
+R.c("server/chunks/ssr/izy-global-website_fde9b654._.js")
+R.c("server/chunks/ssr/2ca5b_next_dist_8bc67164._.js")
+R.m(66866)
+R.m(51126)
+module.exports=R.m(51126).exports

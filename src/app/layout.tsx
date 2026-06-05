@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import { Open_Sans, Montserrat } from "next/font/google";
-import { Header, Footer } from "@/components/layout";
+import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Izy Global Services - Service-Disabled Veteran-Owned Small Business",
-  description: "Professional transportation, logistics, and government contract support services. SDVOSB certified company delivering excellence through service.",
-  keywords: "SDVOSB, veteran-owned business, transportation, logistics, government contracts, freight services",
+  title: "Izy Global Services — SDVOSB Strategic Consulting",
+  description: "Izy Global Services is a Service-Disabled Veteran-Owned Small Business in Houston, TX, delivering strategic consulting, operational excellence, government contracting, and digital transformation with military precision.",
+  keywords: "SDVOSB, veteran-owned business, strategic consulting, government contracting, digital transformation, operational excellence, federal procurement",
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: '#1e3a5f',
+  themeColor: '#0b2545',
 };
 
 export default function RootLayout({
@@ -46,14 +47,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${openSans.variable} ${montserrat.variable} font-sans antialiased`}
-      >
-        <Header />
-        <main className="pt-16 lg:pt-20">
-          {children}
-        </main>
-        <Footer />
+      <body className={`${fraunces.variable} ${outfit.variable}`}>
+        {children}
       </body>
     </html>
   );

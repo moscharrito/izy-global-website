@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Izy Global Services — SDVOSB Strategic Consulting | Houston",
-  description: "Izy Global Services is a Service-Disabled Veteran-Owned Small Business in Houston, TX, delivering strategic consulting, operational excellence, government contracting, and digital transformation with military precision.",
-  keywords: "SDVOSB, veteran-owned business, strategic consulting, government contracting, digital transformation, operational excellence, federal procurement",
+  title: "Izy Global Services — SDVOSB Federal Mission Support | Houston",
+  description: "Izy Global Services is a Service-Disabled Veteran-Owned Small Business in Houston, TX — one partner across healthcare support, logistics, staffing, facilities, and technology services for the VA, DoD, and civilian agencies.",
+  keywords: "SDVOSB, veteran-owned business, federal mission support, VA healthcare logistics, government contracting, staffing, facilities, technology services, federal procurement",
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

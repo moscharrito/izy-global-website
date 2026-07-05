@@ -37,7 +37,7 @@ export default function Home() {
         <div className="wrap nav">
           <a className="brand" href="#top" aria-label="Izy Global Services home">
             <b>Izy Global</b>
-            <span>SDVOSB · Strategic Consulting</span>
+            <span>SDVOSB · Federal Mission Support</span>
           </a>
           <nav className={`links${menuOpen ? ' open' : ''}`} id="navLinks">
             <a href="#services" onClick={closeMenu}>Services</a>
@@ -63,27 +63,26 @@ export default function Home() {
           <div className="wrap">
             <p className="kicker">Houston, Texas · Service-Disabled Veteran-Owned</p>
             <h1>
-              Strategic consulting, executed with{' '}
-              <span className="serif-i">military precision.</span>
+              One partner. <span className="serif-i">Many missions.</span>
             </h1>
             <div className="sub">
               <p className="lede">
-                Izy Global Services helps federal and commercial organizations transform operations,
-                modernize technology, and win on contract performance — led by veterans who
-                understand the mission.
+                Izy Global Services delivers federal mission support across healthcare, logistics,
+                staffing, facilities, and technology — a single accountable SDVOSB prime for the VA,
+                DoD, and civilian agencies.
               </p>
             </div>
             <div className="ctas">
               <a className="btn btn-gold" href="#contact">
                 Start a conversation <span className="arr">→</span>
               </a>
-              <a className="btn btn-line" href="#services">Explore services</a>
+              <a className="btn btn-line" href="#services">Explore capabilities</a>
             </div>
           </div>
           <div className="service-tag">
             <span>Led by an active <b>U.S. Army Reserve</b> service member</span>
             <span className="scroll-hint">Scroll</span>
-            <span>Serving <b>Federal &amp; Commercial</b> clients nationwide</span>
+            <span>Serving the <b>VA, DoD &amp; Civilian Agencies</b> nationwide</span>
           </div>
         </div>
 
@@ -108,45 +107,56 @@ export default function Home() {
               <span className="sec-num reveal">What we do</span>
               <div>
                 <h2 className="reveal">
-                  From strategy to <span className="it">signed performance.</span>
+                  Five domains. One <span className="it">accountable partner.</span>
                 </h2>
                 <p className="lead reveal d1">
-                  Four core practice areas, each grounded in operational rigor and federal
-                  contracting fluency.
+                  Every domain maps to real solicitation types — so a contracting officer sees
+                  exactly where we perform.
                 </p>
               </div>
             </div>
 
             <div className="prog-row reveal">
               <span className="idx">I</span>
-              <h3>Strategic Business Transformation</h3>
+              <h3>Healthcare Support</h3>
               <p>
-                Comprehensive consulting that drives organizational change, optimizes processes, and
-                delivers measurable results through strategic planning and disciplined execution.
+                Clinical and healthcare operations support for VA medical centers and federal health
+                systems — medical courier, clinical staffing, DME delivery, and prosthetics services
+                delivered to clinical standards.
               </p>
             </div>
             <div className="prog-row reveal">
               <span className="idx">II</span>
-              <h3>Operational Excellence</h3>
+              <h3>Logistics &amp; Transportation</h3>
               <p>
-                Supply-chain and operational consulting that streamlines processes, reduces cost,
-                and improves performance across your organization.
+                Scheduled and STAT transportation programs — lab and pharmacy courier, STAT
+                delivery, and special mode transport built on route engineering and chain-of-custody
+                discipline.
               </p>
             </div>
             <div className="prog-row reveal">
               <span className="idx">III</span>
-              <h3>Government Contracting Excellence</h3>
+              <h3>Staffing &amp; Administrative</h3>
               <p>
-                Strategic consulting for contracting success — leveraging SDVOSB certification and
-                deep federal procurement expertise to optimize performance and compliance.
+                Managed workforce services — switchboard and call center operations, ID card and
+                DEERS support, and administrative staffing with SCA compliance and QASP-ready
+                reporting.
               </p>
             </div>
             <div className="prog-row reveal">
               <span className="idx">IV</span>
-              <h3>Technology &amp; Digital Transformation</h3>
+              <h3>Facilities &amp; Security</h3>
               <p>
-                Technology consulting that aligns IT capabilities with business objectives, driving
-                modernization and competitive advantage through practical, scalable solutions.
+                Grounds maintenance, site security, and facility support delivered through licensed,
+                vetted teaming partners under a single accountable SDVOSB prime.
+              </p>
+            </div>
+            <div className="prog-row reveal">
+              <span className="idx">V</span>
+              <h3>Technology &amp; Data</h3>
+              <p>
+                Data engineering, analytics, and digital modernization support that turns agency data
+                into decision-ready insight.
               </p>
             </div>
 
@@ -216,7 +226,7 @@ export default function Home() {
                   <li>SDVOSB teaming partner for small business subcontracting goals</li>
                   <li>Disciplined execution that protects your past performance record</li>
                   <li>Clear scopes, clean handoffs, and proactive communication</li>
-                  <li>Commercial consulting available for private-sector transformation</li>
+                  <li>Commercial services available for private-sector clients</li>
                 </ul>
               </div>
             </div>
@@ -292,10 +302,10 @@ export default function Home() {
               <p className="attribution reveal d2">— Founder, Izy Global Services</p>
               <p className="story reveal d3">
                 Izy Global Services is a Service-Disabled Veteran-Owned Small Business headquartered
-                in Houston, Texas, founded by an active U.S. Army Reserve service member. We pair
-                deep federal procurement experience with technology and operational expertise to
-                drive transformation and deliver measurable outcomes — with the accountability our
-                clients expect from a veteran-led firm.
+                in Houston, Texas, founded by an active U.S. Army Reserve service member. Our past
+                performance is anchored in VA healthcare logistics, and our reach extends across DoD
+                and civilian requirements through disciplined execution and a vetted teaming network
+                — with the accountability our clients expect from a veteran-led firm.
               </p>
             </div>
           </div>
@@ -317,8 +327,8 @@ export default function Home() {
                 <div className="glyph">01</div>
                 <h3>Prime Contract</h3>
                 <p>
-                  Direct or set-aside awards for consulting, transformation, and operational
-                  requirements — performed by us, accountable to you.
+                  Direct or set-aside awards across our five capability domains — performed by us,
+                  accountable to you.
                 </p>
                 <a href="mailto:contracts@izyglobalservices.com?subject=Prime%20Contract%20Inquiry">
                   Discuss a requirement
@@ -337,12 +347,12 @@ export default function Home() {
               </div>
               <div className="door reveal d2">
                 <div className="glyph">03</div>
-                <h3>Commercial Consulting</h3>
+                <h3>Commercial Services</h3>
                 <p>
-                  Private-sector strategy, operations, and technology engagements delivered with the
-                  same disciplined standard.
+                  Private-sector logistics, staffing, and technology services delivered with the same
+                  disciplined federal standard.
                 </p>
-                <a href="mailto:contracts@izyglobalservices.com?subject=Commercial%20Consulting%20Inquiry">
+                <a href="mailto:contracts@izyglobalservices.com?subject=Commercial%20Services%20Inquiry">
                   Start a conversation
                 </a>
               </div>
@@ -386,7 +396,7 @@ export default function Home() {
       <footer>
         <div className="wrap">
           <div>
-            <b>Izy Global Services</b> &nbsp;·&nbsp; SDVOSB Strategic Consulting &nbsp;·&nbsp;
+            <b>Izy Global Services</b> &nbsp;·&nbsp; SDVOSB Federal Mission Support &nbsp;·&nbsp;
             Houston, Texas
           </div>
           <div>

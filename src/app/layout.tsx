@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Izy Global Services — SDVOSB Strategic Consulting",
+  title: "Izy Global Services — SDVOSB Strategic Consulting | Houston",
   description: "Izy Global Services is a Service-Disabled Veteran-Owned Small Business in Houston, TX, delivering strategic consulting, operational excellence, government contracting, and digital transformation with military precision.",
   keywords: "SDVOSB, veteran-owned business, strategic consulting, government contracting, digital transformation, operational excellence, federal procurement",
   icons: {
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${outfit.variable}`}>
+      <body className={`${fraunces.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>

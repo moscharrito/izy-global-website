@@ -1,12 +1,15 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
-    const hdr = document.getElementById('hdr');
-    const onScroll = () => hdr?.classList.toggle('scrolled', window.scrollY > 20);
-    addEventListener('scroll', onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    addEventListener('scroll', onScroll, { passive: true });
 
     const io = new IntersectionObserver(
       (es) =>
@@ -16,7 +19,7 @@ export default function Home() {
             io.unobserve(e.target);
           }
         }),
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
@@ -26,264 +29,369 @@ export default function Home() {
     };
   }, []);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
-      <header id="hdr">
+      <header id="hdr" className={scrolled ? 'scrolled' : undefined}>
         <div className="wrap nav">
-          <a className="brand" href="#">
-            <span className="mark">Izy</span>
-            <b>Izy Global Services</b>
+          <a className="brand" href="#top" aria-label="Izy Global Services home">
+            <b>Izy Global</b>
+            <span>SDVOSB · Strategic Consulting</span>
           </a>
-          <nav className="navlinks">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#contact">Contact</a>
+          <nav className={`links${menuOpen ? ' open' : ''}`} id="navLinks">
+            <a href="#services" onClick={closeMenu}>Services</a>
+            <a href="#serve" onClick={closeMenu}>Who We Serve</a>
+            <a href="#capability" onClick={closeMenu}>Capability</a>
+            <a href="#about" onClick={closeMenu}>About</a>
+            <a href="#contact" onClick={closeMenu}>Contact</a>
+            <a className="btn btn-gold" href="#contact" onClick={closeMenu}>Get a quote</a>
           </nav>
-          <a href="#contact">
-            <button className="btn btn-gold">Get a Quote</button>
-          </a>
+          <button
+            className="menu-btn"
+            aria-label="Open menu"
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            ☰
+          </button>
         </div>
       </header>
 
-      <section className="hero">
-        <div className="grain"></div>
-        <div className="glow g1"></div>
-        <div className="glow g2"></div>
-        <div className="wrap">
-          <span className="eyebrow reveal">
-            <span className="dot"></span>Service-Disabled Veteran-Owned Small Business
-          </span>
-          <h1 className="reveal" style={{ transitionDelay: '.08s' }}>
-            Strategic consulting,<br />executed with <em>military precision.</em>
-          </h1>
-          <p className="lede reveal" style={{ transitionDelay: '.16s' }}>
-            Izy Global Services helps federal and commercial organizations transform operations,
-            modernize technology, and win on contract performance — led by veterans who understand
-            the mission.
-          </p>
-          <div className="hero-cta reveal" style={{ transitionDelay: '.24s' }}>
-            <a href="#contact">
-              <button className="btn btn-gold">Start a Conversation →</button>
-            </a>
-            <a href="#services">
-              <button className="btn btn-ghost">Explore Services</button>
-            </a>
+      <main id="top">
+        {/* ═══ HERO ═══ */}
+        <div className="hero">
+          <div className="wrap">
+            <p className="kicker">Houston, Texas · Service-Disabled Veteran-Owned</p>
+            <h1>
+              Strategic consulting, executed with{' '}
+              <span className="serif-i">military precision.</span>
+            </h1>
+            <div className="sub">
+              <p className="lede">
+                Izy Global Services helps federal and commercial organizations transform operations,
+                modernize technology, and win on contract performance — led by veterans who
+                understand the mission.
+              </p>
+            </div>
+            <div className="ctas">
+              <a className="btn btn-gold" href="#contact">
+                Start a conversation <span className="arr">→</span>
+              </a>
+              <a className="btn btn-line" href="#services">Explore services</a>
+            </div>
           </div>
-          <div className="creds">
-            <div className="cred reveal" style={{ transitionDelay: '.3s' }}>
-              <div className="k">949Y3</div>
-              <div className="l">CAGE Code</div>
-            </div>
-            <div className="cred reveal" style={{ transitionDelay: '.36s' }}>
-              <div className="k">WLDNTVNK9SC7</div>
-              <div className="l">UEI Number</div>
-            </div>
-            <div className="cred reveal" style={{ transitionDelay: '.42s' }}>
-              <div className="k">SAM.gov</div>
-              <div className="l">Active Registration</div>
-            </div>
-            <div className="cred reveal" style={{ transitionDelay: '.48s' }}>
-              <div className="k">Houston, TX</div>
-              <div className="l">Headquarters</div>
-            </div>
+          <div className="service-tag">
+            <span>Led by an active <b>U.S. Army Reserve</b> service member</span>
+            <span className="scroll-hint">Scroll</span>
+            <span>Serving <b>Federal &amp; Commercial</b> clients nationwide</span>
           </div>
         </div>
-      </section>
 
-      <section className="sec" id="about">
-        <div className="wrap">
-          <div className="sec-tag reveal">Who We Are</div>
-          <h2 className="reveal" style={{ transitionDelay: '.06s' }}>
-            A trusted SDVOSB partner built on service and results.
-          </h2>
-          <div className="about-grid">
-            <div className="reveal" style={{ transitionDelay: '.1s' }}>
-              <p>
-                Izy Global Services is a Service-Disabled Veteran-Owned Small Business headquartered
-                in Houston, Texas. We pair deep federal procurement experience with technology and
-                operational expertise to drive organizational transformation and deliver measurable
-                business outcomes.
-              </p>
-              <p>
-                Our work spans strategic planning, supply-chain and process optimization,
-                government-contract performance, and digital transformation — delivered with the
-                discipline and accountability our clients expect from a veteran-led firm.
-              </p>
-              <ul className="checks">
-                <li><span className="ic">✓</span>Strategic business consulting expertise</li>
-                <li><span className="ic">✓</span>Proven SDVOSB partner with active SAM.gov registration</li>
-                <li><span className="ic">✓</span>Technology &amp; operational excellence</li>
-                <li><span className="ic">✓</span>Measurable, mission-focused outcomes</li>
-              </ul>
-            </div>
-            <div className="panel reveal" style={{ transitionDelay: '.16s' }}>
-              <h3>Why partner with Izy?</h3>
-              <div className="stat">
-                <div className="big">Veteran-Led</div>
-                <div className="cap">Discipline, integrity, and accountability on every engagement</div>
-              </div>
-              <div className="stat">
-                <div className="big">Federal-Ready</div>
-                <div className="cap">Set-aside eligible with deep procurement fluency</div>
-              </div>
-              <div className="stat">
-                <div className="big">Outcome-Driven</div>
-                <div className="cap">Strategy translated into measurable performance</div>
-              </div>
-            </div>
+        {/* ═══ CRED MARQUEE ═══ */}
+        <div className="statband" aria-label="Federal credentials">
+          <div className="track">
+            <div className="cell"><b>949Y3</b><span>CAGE Code</span></div>
+            <div className="cell"><b>WLDNTVNK9SC7</b><span>Unique Entity ID</span></div>
+            <div className="cell"><b>SDVOSB</b><span>certified set-aside partner</span></div>
+            <div className="cell"><b>SAM.gov</b><span>active federal registration</span></div>
+            <div className="cell"><b>949Y3</b><span>CAGE Code</span></div>
+            <div className="cell"><b>WLDNTVNK9SC7</b><span>Unique Entity ID</span></div>
+            <div className="cell"><b>SDVOSB</b><span>certified set-aside partner</span></div>
+            <div className="cell"><b>SAM.gov</b><span>active federal registration</span></div>
           </div>
         </div>
-      </section>
 
-      <section className="sec cap-sec" id="capabilities">
-        <div className="wrap">
-          <div className="sec-tag reveal">Our Capabilities</div>
-          <h2 className="reveal" style={{ transitionDelay: '.06s' }}>
-            Consulting solutions for transformation and contracting.
-          </h2>
-          <p className="sub reveal" style={{ transitionDelay: '.1s' }}>
-            Four core practice areas, each grounded in operational rigor and federal contracting
-            fluency.
-          </p>
-          <div className="cards" id="services">
-            <div className="card reveal">
-              <div className="num">01</div>
-              <div className="cic">
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+        {/* ═══ SERVICES ═══ */}
+        <section id="services">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="sec-num reveal">What we do</span>
+              <div>
+                <h2 className="reveal">
+                  From strategy to <span className="it">signed performance.</span>
+                </h2>
+                <p className="lead reveal d1">
+                  Four core practice areas, each grounded in operational rigor and federal
+                  contracting fluency.
+                </p>
               </div>
+            </div>
+
+            <div className="prog-row reveal">
+              <span className="idx">I</span>
               <h3>Strategic Business Transformation</h3>
               <p>
                 Comprehensive consulting that drives organizational change, optimizes processes, and
                 delivers measurable results through strategic planning and disciplined execution.
               </p>
-              <a href="#contact" className="more">
-                Learn more{' '}
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
             </div>
-            <div className="card reveal" style={{ transitionDelay: '.08s' }}>
-              <div className="num">02</div>
-              <div className="cic">
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3>Operational Excellence Consulting</h3>
+            <div className="prog-row reveal">
+              <span className="idx">II</span>
+              <h3>Operational Excellence</h3>
               <p>
-                Supply-chain and operational consulting that streamlines processes, reduces cost, and
-                improves performance across your organization.
+                Supply-chain and operational consulting that streamlines processes, reduces cost,
+                and improves performance across your organization.
               </p>
-              <a href="#contact" className="more">
-                Learn more{' '}
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
             </div>
-            <div className="card reveal" style={{ transitionDelay: '.16s' }}>
-              <div className="num">03</div>
-              <div className="cic">
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
+            <div className="prog-row reveal">
+              <span className="idx">III</span>
               <h3>Government Contracting Excellence</h3>
               <p>
-                Strategic consulting for contracting success, leveraging SDVOSB certification and deep
-                federal procurement expertise to optimize performance and compliance.
+                Strategic consulting for contracting success — leveraging SDVOSB certification and
+                deep federal procurement expertise to optimize performance and compliance.
               </p>
-              <a href="#contact" className="more">
-                Learn more{' '}
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
             </div>
-            <div className="card reveal" style={{ transitionDelay: '.24s' }}>
-              <div className="num">04</div>
-              <div className="cic">
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
+            <div className="prog-row reveal">
+              <span className="idx">IV</span>
               <h3>Technology &amp; Digital Transformation</h3>
               <p>
                 Technology consulting that aligns IT capabilities with business objectives, driving
                 modernization and competitive advantage through practical, scalable solutions.
               </p>
-              <a href="#contact" className="more">
-                Learn more{' '}
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+            </div>
+
+            <div className="timeline">
+              <div className="tl now reveal">
+                <p className="when">Step one</p>
+                <h3>Assess the mission</h3>
+                <p>
+                  We map requirements, constraints, and success criteria — reading the solicitation,
+                  the operation, and the stakeholders with equal care.
+                </p>
+              </div>
+              <div className="tl reveal d1">
+                <p className="when">Step two</p>
+                <h3>Build the plan</h3>
+                <p>
+                  Staffing, compliance, and execution plans with named leads, clear milestones, and
+                  pricing that holds up under evaluation.
+                </p>
+              </div>
+              <div className="tl reveal d2">
+                <p className="when">Step three</p>
+                <h3>Execute &amp; report</h3>
+                <p>
+                  Disciplined delivery with performance metrics, transparent reporting, and
+                  continuous improvement through the life of the engagement.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="band" id="contact">
-        <div className="grain"></div>
-        <div className="glow g1" style={{ opacity: '.6' }}></div>
-        <div className="wrap">
-          <h2 className="reveal">Ready to put veteran-led expertise to work?</h2>
-          <p className="reveal" style={{ transitionDelay: '.06s' }}>
-            Let&apos;s talk about your next contract, transformation initiative, or operational
-            challenge.
-          </p>
-          <div className="reveal" style={{ transitionDelay: '.12s' }}>
-            <a href="mailto:contracts@izyglobalservices.com">
-              <button className="btn btn-gold">contracts@izyglobalservices.com</button>
-            </a>
+        {/* ═══ WHO WE SERVE ═══ */}
+        <section className="serve-band" id="serve">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="sec-num reveal">Who we serve</span>
+              <div>
+                <h2 className="reveal" style={{ color: '#fff' }}>
+                  Federal agencies and the{' '}
+                  <span className="it" style={{ color: 'var(--gold-soft)' }}>
+                    primes who serve them.
+                  </span>
+                </h2>
+                <p className="lead reveal d1">
+                  Whether you&apos;re a contracting officer with a set-aside requirement or a large
+                  business building a compliant team, we bring the same standard: do the mission
+                  right, the first time.
+                </p>
+              </div>
+            </div>
+            <div className="split">
+              <div className="half reveal">
+                <h3>Federal Agencies</h3>
+                <p className="sub-t">Direct award · Set-aside</p>
+                <ul>
+                  <li>SDVOSB set-aside eligible for direct and competitive awards</li>
+                  <li>Active SAM.gov registration with clean, current entity data</li>
+                  <li>Deep fluency in FAR-based procurement and contract compliance</li>
+                  <li>Responsive, accountable, veteran-led performance</li>
+                </ul>
+              </div>
+              <div className="half reveal d1">
+                <h3>Prime Contractors</h3>
+                <p className="sub-t">Teaming · Subcontracting</p>
+                <ul>
+                  <li>SDVOSB teaming partner for small business subcontracting goals</li>
+                  <li>Disciplined execution that protects your past performance record</li>
+                  <li>Clear scopes, clean handoffs, and proactive communication</li>
+                  <li>Commercial consulting available for private-sector transformation</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ═══ CAPABILITY ═══ */}
+        <section className="refer" id="capability">
+          <div className="wrap">
+            <div className="frame">
+              <div className="sec-head" style={{ marginBottom: 0 }}>
+                <span className="sec-num reveal">For contracting officers</span>
+                <div>
+                  <h2 className="reveal">
+                    Vetting us should take <span className="it">minutes, not weeks.</span>
+                  </h2>
+                  <p className="lead reveal d1">
+                    Everything you need to verify, evaluate, and engage Izy Global Services — in one
+                    place.
+                  </p>
+                </div>
+              </div>
+              <div className="grid">
+                <ol className="steps">
+                  <li className="reveal">
+                    Verify our registration on SAM.gov using CAGE 949Y3 or UEI WLDNTVNK9SC7 —
+                    active, current, and set-aside certified.
+                  </li>
+                  <li className="reveal d1">
+                    Request our capability statement by email. It arrives within one business day,
+                    tailored to your requirement.
+                  </li>
+                  <li className="reveal d2">
+                    Schedule a capabilities briefing. We come prepared with relevant experience,
+                    staffing approach, and pricing philosophy.
+                  </li>
+                  <li className="reveal d3">
+                    Engage with confidence. Named leads, clear milestones, and reporting your office
+                    can rely on.
+                  </li>
+                </ol>
+                <div className="promise-card reveal d1">
+                  <h3>Federal registry</h3>
+                  <div className="reg-rows">
+                    <div className="rr"><span className="k">CAGE</span><span className="v">949Y3</span></div>
+                    <div className="rr"><span className="k">UEI</span><span className="v">WLDNTVNK9SC7</span></div>
+                    <div className="rr"><span className="k">Status</span><span className="v">SDVOSB Certified</span></div>
+                    <div className="rr"><span className="k">Registration</span><span className="v">SAM.gov Active</span></div>
+                    <div className="rr"><span className="k">HQ</span><span className="v">Houston, Texas</span></div>
+                  </div>
+                  <a
+                    className="btn btn-gold"
+                    style={{ marginTop: '30px' }}
+                    href="mailto:contracts@izyglobalservices.com?subject=Capability%20Statement%20Request"
+                  >
+                    Request capability statement <span className="arr">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ ABOUT ═══ */}
+        <section className="about" id="about">
+          <div className="wrap">
+            <div className="quote-wrap">
+              <span className="qmark reveal">&quot;</span>
+              <blockquote className="reveal d1">
+                The discipline that carries a mission through in uniform is the same discipline that
+                carries a contract through to performance.
+              </blockquote>
+              <p className="attribution reveal d2">— Founder, Izy Global Services</p>
+              <p className="story reveal d3">
+                Izy Global Services is a Service-Disabled Veteran-Owned Small Business headquartered
+                in Houston, Texas, founded by an active U.S. Army Reserve service member. We pair
+                deep federal procurement experience with technology and operational expertise to
+                drive transformation and deliver measurable outcomes — with the accountability our
+                clients expect from a veteran-led firm.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ ENGAGE ═══ */}
+        <section id="involve">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="sec-num reveal">Ways to engage</span>
+              <div>
+                <h2 className="reveal">
+                  Three doors. All of them <span className="it">open.</span>
+                </h2>
+              </div>
+            </div>
+            <div className="doors">
+              <div className="door reveal">
+                <div className="glyph">01</div>
+                <h3>Prime Contract</h3>
+                <p>
+                  Direct or set-aside awards for consulting, transformation, and operational
+                  requirements — performed by us, accountable to you.
+                </p>
+                <a href="mailto:contracts@izyglobalservices.com?subject=Prime%20Contract%20Inquiry">
+                  Discuss a requirement
+                </a>
+              </div>
+              <div className="door reveal d1">
+                <div className="glyph">02</div>
+                <h3>Teaming Partner</h3>
+                <p>
+                  SDVOSB subcontracting and joint pursuit for primes building compliant, capable
+                  teams on federal opportunities.
+                </p>
+                <a href="mailto:contracts@izyglobalservices.com?subject=Teaming%20Inquiry">
+                  Explore teaming
+                </a>
+              </div>
+              <div className="door reveal d2">
+                <div className="glyph">03</div>
+                <h3>Commercial Consulting</h3>
+                <p>
+                  Private-sector strategy, operations, and technology engagements delivered with the
+                  same disciplined standard.
+                </p>
+                <a href="mailto:contracts@izyglobalservices.com?subject=Commercial%20Consulting%20Inquiry">
+                  Start a conversation
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ CONTACT ═══ */}
+        <section className="contact" id="contact">
+          <div className="wrap">
+            <div className="grid">
+              <div>
+                <span
+                  className="sec-num reveal"
+                  style={{ color: 'var(--gold)', borderTopColor: 'var(--gold)', display: 'inline-block' }}
+                >
+                  Contact
+                </span>
+                <h2 className="reveal" style={{ marginTop: '18px' }}>
+                  Ready to put veteran-led expertise to{' '}
+                  <span className="it" style={{ color: 'var(--gold-soft)' }}>work?</span>
+                </h2>
+                <p className="note reveal d1" style={{ marginTop: '18px' }}>
+                  Let&apos;s talk about your next contract, transformation initiative, or operational
+                  challenge. We respond within one business day.
+                </p>
+              </div>
+              <div>
+                <a className="big-link reveal" href="mailto:contracts@izyglobalservices.com">
+                  <small>Email</small>contracts@izyglobalservices.com
+                </a>
+                <span className="big-link reveal d1" style={{ cursor: 'default' }}>
+                  <small>Headquarters</small>Houston, Texas
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <footer>
         <div className="wrap">
-          <div className="foot">
-            <div>
-              <a className="brand" href="#">
-                <span className="mark">Izy</span>
-                <b>Izy Global Services</b>
-              </a>
-              <p>
-                Strategic business consulting &amp; transformation — delivered with veteran-led
-                excellence.
-              </p>
-              <a className="line" href="mailto:contracts@izyglobalservices.com">
-                contracts@izyglobalservices.com
-              </a>
-              <a className="line" href="tel:346-483-6266">346-483-6266</a>
-              <a className="line">Houston, Texas</a>
-            </div>
-            <div>
-              <h4>Navigate</h4>
-              <a className="line" href="#about">About</a>
-              <a className="line" href="#services">Services</a>
-              <a className="line" href="#capabilities">Capabilities</a>
-              <a className="line" href="#contact">Contact</a>
-            </div>
-            <div>
-              <h4>Credentials</h4>
-              <div className="badge"><span className="d"></span>SDVOSB Certified</div>
-              <div className="badge"><span className="d"></span>SAM.gov Registered</div>
-              <div style={{ marginTop: '18px' }}>
-                <div style={{ fontSize: '11px', letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)' }}>CAGE</div>
-                <div style={{ fontWeight: 600, fontSize: '15px' }}>949Y3</div>
-              </div>
-              <div style={{ marginTop: '12px' }}>
-                <div style={{ fontSize: '11px', letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)' }}>UEI</div>
-                <div style={{ fontWeight: 600, fontSize: '15px' }}>WLDNTVNK9SC7</div>
-              </div>
-            </div>
+          <div>
+            <b>Izy Global Services</b> &nbsp;·&nbsp; SDVOSB Strategic Consulting &nbsp;·&nbsp;
+            Houston, Texas
           </div>
-          <div className="copy">© 2026 Izy Global Services LLC. All Rights Reserved.</div>
+          <div>
+            CAGE 949Y3 &nbsp;·&nbsp; UEI WLDNTVNK9SC7 &nbsp;·&nbsp; © 2026 Izy Global Services LLC
+          </div>
         </div>
       </footer>
     </>

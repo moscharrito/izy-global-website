@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const CONTACT_EMAIL = 'iar@izymovers.com';
+const CONTACT_EMAIL = 'contracts@izyglobalservices.com';
 
 const TICKER_ITEMS = [
   'Logistics & Transportation',
